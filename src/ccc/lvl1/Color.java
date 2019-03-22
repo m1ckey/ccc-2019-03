@@ -10,4 +10,10 @@ public class Color
     this.green = green;
     this.blue = blue;
   }
+
+  public Color(String[] parts, int n){
+   this.red = Integer.parseInt(parts[0+(3*n)]);
+   this.green = Integer.parseInt(parts[0+(3*n)]);
+   this.blue = Integer.parseInt(parts[0+(3*n)]);
+  }
 }
