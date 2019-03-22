@@ -12,7 +12,7 @@ public class Level3Input extends LevelInput {
   private Coordinate start;
 
 
-  public Level3Input(Color[][] color, Coordinate start) {
+  public Level3Input(Color[][] colors, Coordinate start) {
     this.colors = colors;
 
     this.start = start;

@@ -68,17 +68,21 @@ public class Level3 extends Level {
 
     System.out.println(input.toString());
 
-    colorMap = null;
-    Coordinate start = null; // todo
+    colorMap = input.getColors();
+    Coordinate start = input.getStart();
     visited.add(start);
 
-    List<Coordinate> next = getValidMoves(start); // todo
+    Coordinate next = start;
+    List<Coordinate> validMoves = getValidMoves(next);
 
-    while(!next.isEmpty())
+    while(!validMoves.isEmpty())
     {
-
+      next = leastResistance(next, (Coordinate[]) validMoves.toArray());
+      visited.add(next);
+      validMoves = getValidMoves(next);
     }
 
+    visited.forEach(c -> output.buffer.add(c.i + " " + c.j + "\n"));
 
     return output;
   }
