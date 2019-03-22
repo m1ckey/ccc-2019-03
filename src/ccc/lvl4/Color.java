@@ -27,6 +27,6 @@ public class Color
     }
 
   public boolean isPassable() {
-      return this.red == 0 && this.blue == 0 && this.green == 0;
+      return !(this.red == 0 && this.blue == 0 && this.green == 0);
   }
 }
