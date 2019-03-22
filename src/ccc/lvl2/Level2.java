@@ -33,9 +33,9 @@ public class Level2 extends Level {
   }
 
   @Override
-  public LevelOutput run(LevelInput i) throws IOException {
+  public LevelOutput run(LevelInput in) throws IOException {
 
-    Level2Input input = (Level2Input) i;
+    Level2Input input = (Level2Input) in;
     LevelOutput output = new Level2Output();
 
 
