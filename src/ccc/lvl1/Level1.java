@@ -20,7 +20,11 @@ public class Level1 extends Level {
     int n = Integer.parseInt(lines.get(0));
     lines.remove(0);
     for(int i = 0; i<n; i++){
-
+      String[] parts = lines.get(i).split(" ");
+      Color c1 = new Color(parts, 0);
+      Color c2 = new Color(parts, 1);
+      Pair pair = new Pair(c1, c2);
+      pairList.add(pair);
     }
     return in;
   }
