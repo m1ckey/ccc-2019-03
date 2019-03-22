@@ -17,6 +17,10 @@ public class Level4Input extends LevelInput {
     this.pairList = pairList;
   }
 
+  public List<Pair> getPairList() {
+    return pairList;
+  }
+
   public Color[][] getColors() {
     return colors;
   }
