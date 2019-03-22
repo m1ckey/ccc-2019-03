@@ -26,6 +26,7 @@ public class Level1 extends Level {
       Pair pair = new Pair(c1, c2);
       pairList.add(pair);
     }
+    in.setPairList(pairList);
     return in;
   }
 

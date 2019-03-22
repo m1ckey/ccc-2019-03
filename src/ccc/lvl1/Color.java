@@ -13,7 +13,7 @@ public class Color
 
   public Color(String[] parts, int n){
    this.red = Integer.parseInt(parts[0+(3*n)]);
-   this.green = Integer.parseInt(parts[0+(3*n)]);
-   this.blue = Integer.parseInt(parts[0+(3*n)]);
+   this.green = Integer.parseInt(parts[1+(3*n)]);
+   this.blue = Integer.parseInt(parts[2+(3*n)]);
   }
 }

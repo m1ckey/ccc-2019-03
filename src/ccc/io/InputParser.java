@@ -19,7 +19,7 @@ public class InputParser {
   }
 
   public List<String> getExampleLines() throws IOException {
-    File egFile = new File(String.format("%s/level%s_0.in", inputFolder.getAbsoluteFile(), lvl));
+    File egFile = new File(String.format("%s/level%s_1.in", inputFolder.getAbsoluteFile(), lvl));
     List<String> ret = new ArrayList<>();
     Files.lines(egFile.toPath()).forEach(s -> ret.add(s));
     return ret;
