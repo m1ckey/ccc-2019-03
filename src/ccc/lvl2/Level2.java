@@ -38,9 +38,15 @@ public class Level2 extends Level {
     Level2Input input = (Level2Input) i;
     LevelOutput output = new Level2Output();
 
-    for(ccc.lvl2.Color[] p : input.getColors())
-    {
-      output.buffer.add("" + distance(p.getC1(), p.getC2()) + "\n");
+
+    Color[][] map = null;
+
+    for (int i = 0; i < map.length; i++) {
+      for (int j = 0; i < map[i].length - 1; j++) {
+
+        output.buffer.add("" + distance(map[i][j], map[i][j + 1]));
+      }
+      output.buffer.add("\n");
     }
     return output;
   }
