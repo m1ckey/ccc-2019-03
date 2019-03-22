@@ -25,4 +25,8 @@ public class Color
                 ", blue=" + blue +
                 '}';
     }
+
+  public boolean isPassable() {
+      return this.red == 0 && this.blue == 0 && this.green == 0;
+  }
 }
