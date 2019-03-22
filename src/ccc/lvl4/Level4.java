@@ -41,16 +41,32 @@ public class Level4 extends Level {
   public List<Coordinate> getValidMoves(Coordinate cord){
     List<Coordinate> list = new ArrayList<>();
 
+    if(cord.j-1>=0){
+      Coordinate left = new Coordinate(cord.i, cord.j-1, colorMap);
+      if(left.c.isPassable()) {
+        list.add(left);
+      }
+    }
+
     if(cord.j+1<colorMap[cord.i].length){
-      list.add(new Coordinate(cord.i, cord.j+1, colorMap));
+      Coordinate right = new Coordinate(cord.i, cord.j+1, colorMap);
+      if(right.c.isPassable()) {
+        list.add(right);
+      }
     }
 
     if(cord.i+1<colorMap.length){
-      list.add(new Coordinate(cord.i+1, cord.j, colorMap));
+      Coordinate down = new Coordinate(cord.i+1, cord.j, colorMap);
+      if(down.c.isPassable()) {
+        list.add(down);
+      }
     }
 
     if(cord.i-1>=0){
-      list.add(new Coordinate(cord.i-1, cord.j, colorMap));
+      Coordinate up = new Coordinate(cord.i-1, cord.j, colorMap);
+      if(up.c.isPassable()) {
+        list.add(up);
+      }
     }
 
     list.removeAll(visited);
