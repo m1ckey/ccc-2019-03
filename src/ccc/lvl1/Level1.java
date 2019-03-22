@@ -38,7 +38,7 @@ public class Level1 extends Level {
 
     for(Pair p : input.getPairList())
     {
-      output.buffer.add("" + distance(p.getC1(), p.getC2()));
+      output.buffer.add("" + distance(p.getC1(), p.getC2()) + "\n");
     }
     return output;
   }
