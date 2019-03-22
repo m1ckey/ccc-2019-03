@@ -12,4 +12,11 @@ public class Coordinate
     this.j = j;
     this.c = c;
   }
+
+  public Coordinate(int i, int j, Color[][] cMap)
+  {
+    this.i = i;
+    this.j = j;
+    this.c = cMap[i][j];
+  }
 }

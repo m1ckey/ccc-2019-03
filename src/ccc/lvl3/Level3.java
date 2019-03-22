@@ -41,6 +41,18 @@ public class Level3 extends Level {
   public List<Coordinate> getValidMoves(Coordinate cord){
     List<Coordinate> list = new ArrayList<>();
 
+    if(cord.j+1<colorMap[cord.i].length){
+      list.add(new Coordinate(cord.i, cord.j+1, colorMap));
+    }
+
+    if(cord.i+1<colorMap.length){
+      list.add(new Coordinate(cord.i+1, cord.j, colorMap));
+    }
+
+    if(cord.i-1>=0){
+      list.add(new Coordinate(cord.i-1, cord.j, colorMap));
+    }
+
 
     return list;
   }
