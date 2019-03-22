@@ -30,6 +30,11 @@ public class Level1 extends Level {
     return output;
   }
 
+  private int distance(Color c1, Color c2)
+  {
+    return (int) Math.sqrt(Math.pow(c1.red - c2.red, 2) + Math.pow(c1.green - c2.green, 2) + Math.pow(c1.blue - c2.blue, 2));
+  }
+
   @Override
   public List<String> transformToLines(LevelOutput o) {
 
