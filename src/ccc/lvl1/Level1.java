@@ -16,7 +16,12 @@ public class Level1 extends Level {
   @Override
   public LevelInput transformFromLines(List<String> lines) {
     Level1Input in = new Level1Input();
+    List<Pair> pairList = new ArrayList<>();
+    int n = Integer.parseInt(lines.get(0));
+    lines.remove(0);
+    for(int i = 0; i<n; i++){
 
+    }
     return in;
   }
 
