@@ -87,8 +87,14 @@ public class Level3 extends Level {
           leastResistance = colorEnd;
           leastResistanceDistance = distance;
         }
+        else if(colorEnd.i == leastResistance.i) {
+          if(colorEnd.j < leastResistance.j) {
+            leastResistance = colorEnd;
+            leastResistanceDistance = distance;
+          }
+        }
       }
-      if(distance < leastResistanceDistance) {
+      else if(distance < leastResistanceDistance) {
         leastResistance = colorEnd;
         leastResistanceDistance = distance;
       }
