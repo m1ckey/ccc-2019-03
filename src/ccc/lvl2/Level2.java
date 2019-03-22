@@ -3,32 +3,32 @@ package ccc.lvl2;
 import ccc.Level;
 import ccc.LevelInput;
 import ccc.LevelOutput;
-import ccc.lvl1.Color;
-import ccc.lvl1.Pair;
+import ccc.lvl2.Color;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Level2 extends Level {
   public Level2() {
-    super(1);
+    super(2);
   }
 
   @Override
   public LevelInput transformFromLines(List<String> lines) {
     Level2Input in = new Level2Input();
-    List<Pair> pairList = new ArrayList<>();
-    int n = Integer.parseInt(lines.get(0));
+    String[] line1Parts = lines.get(0).split(" ");
+    int rows = Integer.parseInt(line1Parts[0]);
+    int columns = Integer.parseInt(line1Parts[0]);
+    Color[][] colors = new Color[rows][columns];
     lines.remove(0);
-    for(int i = 0; i<n; i++){
+    for(int i = 0; i<rows; i++){
       String[] parts = lines.get(i).split(" ");
-      Color c1 = new Color(parts, 0);
-      Color c2 = new Color(parts, 1);
-      Pair pair = new Pair(c1, c2);
-      pairList.add(pair);
+      for(int j = 0; j<columns; j++) {
+          Color c = new Color(parts, j);
+          colors[i][j] = c;
+      }
     }
-    in.setPairList(pairList);
+    in.setColors(colors);
     return in;
   }
 
@@ -38,7 +38,7 @@ public class Level2 extends Level {
     Level2Input input = (Level2Input) i;
     LevelOutput output = new Level2Output();
 
-    for(Pair p : input.getPairList())
+    for(ccc.lvl2.Color[] p : input.getColors())
     {
       output.buffer.add("" + distance(p.getC1(), p.getC2()) + "\n");
     }

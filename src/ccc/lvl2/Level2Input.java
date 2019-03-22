@@ -1,21 +1,18 @@
 package ccc.lvl2;
 
 import ccc.LevelInput;
-import ccc.lvl1.Pair;
-
-import java.util.List;
 
 public class Level2Input extends LevelInput {
 
   public Level2Input(){}
 
-  private List<Pair> pairList;
+  private Color[][] colors;
 
-  public void setPairList(List<Pair> pairList) {
-    this.pairList = pairList;
+  public void setColors(Color[][] colors) {
+    this.colors = colors;
   }
 
-  public List<Pair> getPairList() {
-    return pairList;
+  public Color[][] getColors() {
+    return colors;
   }
 }
