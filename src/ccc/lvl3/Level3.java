@@ -77,7 +77,7 @@ public class Level3 extends Level {
 
     while(!validMoves.isEmpty())
     {
-      next = leastResistance(next, (Coordinate[]) validMoves.toArray());
+      next = leastResistance(next, validMoves.toArray(new Coordinate[validMoves.size()]));
       visited.add(next);
       validMoves = getValidMoves(next);
     }
