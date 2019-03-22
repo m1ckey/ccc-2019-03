@@ -5,6 +5,7 @@ import ccc.LevelInput;
 import ccc.LevelOutput;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Level3 extends Level {
@@ -36,6 +37,9 @@ public class Level3 extends Level {
     return in;
   }
 
+  List<Coordinate> visited = new ArrayList<>();
+  Color[][] colorMap = null;
+
   @Override
   public LevelOutput run(LevelInput in) throws IOException {
 
@@ -44,15 +48,18 @@ public class Level3 extends Level {
 
     System.out.println(input.toString());
 
-    Color[][] map = null;
+    colorMap = null;
+    Coordinate start = null; // todo
+    visited.add(start);
 
-    for (int i = 0; i < map.length; i++) {
-      for (int j = 0; i < map[i].length - 1; j++) {
+    List<Coordinate> next = getValidMoves(start); // todo
 
-        output.buffer.add("" + distance(map[i][j], map[i][j + 1]));
-      }
-      output.buffer.add("\n");
+    while(!next.isEmpty())
+    {
+
     }
+
+
     return output;
   }
 
