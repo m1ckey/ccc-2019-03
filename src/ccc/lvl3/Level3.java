@@ -99,6 +99,7 @@ public class Level3 extends Level {
     Coordinate leastResistance = ends[0];
     int leastResistanceDistance = distance(colorStart, ends[0].c);
     for (Coordinate colorEnd : ends) {
+      if(leastResistance.equals(colorEnd)) continue;
       int distance = distance(colorStart, colorEnd.c);
       if(distance == leastResistanceDistance) {
         if(colorEnd.i < leastResistance.i) {
