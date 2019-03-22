@@ -10,21 +10,30 @@ import java.util.List;
 
 public class Level4 extends Level {
   public Level4() {
-    super(3);
+    super(4);
   }
 
   @Override
   public LevelInput transformFromLines(List<String> lines) {
     Level4Input in = new Level4Input();
     String[] line1Parts = lines.get(0).split(" ");
-    String[] line2Parts = lines.get(1).split(" ");
     int rows = Integer.parseInt(line1Parts[0]);
     int columns = Integer.parseInt(line1Parts[1]);
-    int startColumn = Integer.parseInt(line2Parts[1]);
-    int startRow = Integer.parseInt(line2Parts[0]);
     Color[][] colors = new Color[rows][columns];
-    lines.remove(1);
     lines.remove(0);
+
+    int n = Integer.parseInt(lines.get(0));
+    List<Pair> pairList = new ArrayList<>();
+    lines.remove(0);
+
+    for(int i = 0; i<n; i++){
+      String[] parts = lines.get(0).split(" ");
+      Coordinate c1 = new Coordinate(parts, 0);
+      Coordinate c2 = new Coordinate(parts, 1);
+      Pair pair = new Pair(c1, c2);
+      pairList.add(pair);
+      lines.remove(0);
+    }
 
     for(int i = 0; i<rows; i++){
       String[] parts = lines.get(i).split(" ");
@@ -33,8 +42,11 @@ public class Level4 extends Level {
           colors[i][j] = c;
       }
     }
-    Coordinate start = new Coordinate(startRow, startColumn, colors);
-    in = new Level4Input(colors, start);
+
+    for(Pair pair : pairList){
+      pair.initColor(colors);
+    }
+    in = new Level4Input(colors, pairList);
     return in;
   }
 
@@ -88,19 +100,6 @@ public class Level4 extends Level {
 
     System.out.println(input.toString());
 
-    colorMap = input.getColors();
-    Coordinate start = input.getStart();
-    visited.add(start);
-
-    Coordinate next = start;
-    List<Coordinate> validMoves = getValidMoves(next);
-
-    while(!validMoves.isEmpty())
-    {
-      next = leastResistance(next, validMoves.toArray(new Coordinate[validMoves.size()]));
-      visited.add(next);
-      validMoves = getValidMoves(next);
-    }
 
     visited.forEach(c -> output.buffer.add(c.i + " " + c.j + "\n"));
 

@@ -6,7 +6,13 @@ public class Coordinate
 {
 
   public final int i, j;
-  public final Color c;
+  public Color c;
+
+  public Coordinate(String[] parts, int j)
+  {
+    this.i = Integer.parseInt(parts[0+(j*2)]);
+    this.j = Integer.parseInt(parts[1+(j*2)]);
+  }
 
   public Coordinate(int i, int j, Color c)
   {
@@ -20,6 +26,14 @@ public class Coordinate
     this.i = i;
     this.j = j;
     this.c = cMap[i][j];
+  }
+
+  public void setC(Color c) {
+    this.c = c;
+  }
+
+  public void initColor(Color[][] colors){
+    c = colors[i][j];
   }
 
   @Override
