@@ -51,8 +51,7 @@ public class Coordinate
     if (o == null || getClass() != o.getClass()) return false;
     Coordinate that = (Coordinate) o;
     return i == that.i &&
-            j == that.j &&
-            Objects.equals(c, that.c);
+            j == that.j;
   }
 
   @Override
