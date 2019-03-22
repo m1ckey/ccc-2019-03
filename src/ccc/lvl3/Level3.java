@@ -33,8 +33,16 @@ public class Level3 extends Level {
           colors[i][j] = c;
       }
     }
-    in = new Level3Input(colors, startRow, startColumn);
+    Coordinate start = new Coordinate(startRow, startColumn, colors[startRow][startColumn]);
+    in = new Level3Input(colors, start);
     return in;
+  }
+
+  public List<Coordinate> getValidMoves(Coordinate cord){
+    List<Coordinate> list = new ArrayList<>();
+
+
+    return list;
   }
 
   List<Coordinate> visited = new ArrayList<>();

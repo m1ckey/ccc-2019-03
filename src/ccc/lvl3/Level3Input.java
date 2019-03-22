@@ -9,32 +9,21 @@ public class Level3Input extends LevelInput {
   public Level3Input(){}
 
   private Color[][] colors;
-  private int startRow, startColumn;
+  private Coordinate start;
 
-  public int getStartRow() {
-    return startRow;
-  }
 
-  public int getStartColumn() {
-    return startColumn;
-  }
-
-  public Level3Input(Color[][] colors, int startRow, int startColumn) {
+  public Level3Input(Color[][] color, Coordinate start) {
     this.colors = colors;
-    this.startRow = startRow;
-    this.startColumn = startColumn;
+
+    this.start = start;
   }
 
   public Color[][] getColors() {
     return colors;
   }
 
-  @Override
-  public String toString() {
-    return "Level3Input{" +
-            "colors=" + Arrays.toString(colors) +
-            ", startRow=" + startRow +
-            ", startColumn=" + startColumn +
-            '}';
+  public Coordinate getStart() {
+    return start;
   }
+
 }
