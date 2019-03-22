@@ -68,6 +68,26 @@ public class Level3 extends Level {
     return (int) Math.sqrt(Math.pow(c1.red - c2.red, 2) + Math.pow(c1.green - c2.green, 2) + Math.pow(c1.blue - c2.blue, 2));
   }
 
+  private Coordinate leastResistance(Coordinate start, Coordinate... ends) {
+    Color colorStart = start.c;
+    Coordinate leastResistance = ends[0];
+    int leastResistanceDistance = distance(colorStart, ends[0].c);
+    for (Coordinate colorEnd : ends) {
+      int distance = distance(colorStart, colorEnd.c);
+      if(distance == leastResistanceDistance) {
+        if(colorEnd.i < leastResistance.i) {
+          leastResistance = colorEnd;
+          leastResistanceDistance = distance;
+        }
+      }
+      if(distance < leastResistanceDistance) {
+        leastResistance = colorEnd;
+        leastResistanceDistance = distance;
+      }
+    }
+    return leastResistance;
+  }
+
   @Override
   public List<String> transformToLines(LevelOutput o) {
 
