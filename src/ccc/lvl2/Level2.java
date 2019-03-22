@@ -18,7 +18,7 @@ public class Level2 extends Level {
     Level2Input in = new Level2Input();
     String[] line1Parts = lines.get(0).split(" ");
     int rows = Integer.parseInt(line1Parts[0]);
-    int columns = Integer.parseInt(line1Parts[0]);
+    int columns = Integer.parseInt(line1Parts[1]);
     Color[][] colors = new Color[rows][columns];
     lines.remove(0);
     for(int i = 0; i<rows; i++){
@@ -39,12 +39,12 @@ public class Level2 extends Level {
     LevelOutput output = new Level2Output();
 
 
-    Color[][] map = null;
+    Color[][] map = input.getColors();
 
     for (int i = 0; i < map.length; i++) {
-      for (int j = 0; i < map[i].length - 1; j++) {
+      for (int j = 0; j < map[i].length - 1; j++) {
 
-        output.buffer.add("" + distance(map[i][j], map[i][j + 1]));
+        output.buffer.add(distance(map[i][j], map[i][j + 1]) + " ");
       }
       output.buffer.add("\n");
     }
