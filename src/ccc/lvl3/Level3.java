@@ -53,6 +53,8 @@ public class Level3 extends Level {
       list.add(new Coordinate(cord.i-1, cord.j, colorMap));
     }
 
+    list.removeAll(visited);
+
 
     return list;
   }
