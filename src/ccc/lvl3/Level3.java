@@ -33,7 +33,7 @@ public class Level3 extends Level {
           colors[i][j] = c;
       }
     }
-    Coordinate start = new Coordinate(startRow, startColumn, colors[startRow][startColumn]);
+    Coordinate start = new Coordinate(startRow, startColumn, colors);
     in = new Level3Input(colors, start);
     return in;
   }

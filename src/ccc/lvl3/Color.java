@@ -16,4 +16,13 @@ public class Color
    this.green = Integer.parseInt(parts[1+(3*n)]);
    this.blue = Integer.parseInt(parts[2+(3*n)]);
   }
+
+    @Override
+    public String toString() {
+        return "Color{" +
+                "red=" + red +
+                ", green=" + green +
+                ", blue=" + blue +
+                '}';
+    }
 }

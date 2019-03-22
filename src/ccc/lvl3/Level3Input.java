@@ -26,4 +26,11 @@ public class Level3Input extends LevelInput {
     return start;
   }
 
+  @Override
+  public String toString() {
+    return "Level3Input{" +
+            "colors=" + Arrays.toString(colors) +
+            ", start=" + start +
+            '}';
+  }
 }

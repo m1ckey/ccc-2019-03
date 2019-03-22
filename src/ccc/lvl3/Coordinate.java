@@ -19,4 +19,13 @@ public class Coordinate
     this.j = j;
     this.c = cMap[i][j];
   }
+
+  @Override
+  public String toString() {
+    return "Coordinate{" +
+            "i=" + i +
+            ", j=" + j +
+            ", c=" + c +
+            '}';
+  }
 }
