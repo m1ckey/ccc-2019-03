@@ -31,7 +31,10 @@ public class Level1 extends Level {
     Level1Input input = (Level1Input) i;
     LevelOutput output = new Level1Output();
 
-    // todo: solution goes here
+    for(Pair p : input.getPairList())
+    {
+      output.buffer.add("" + distance(p.getC1(), p.getC2()));
+    }
     return output;
   }
 
