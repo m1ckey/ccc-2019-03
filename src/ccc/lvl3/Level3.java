@@ -18,7 +18,7 @@ public class Level3 extends Level {
     String[] line1Parts = lines.get(0).split(" ");
     String[] line2Parts = lines.get(1).split(" ");
     int rows = Integer.parseInt(line1Parts[0]);
-    int columns = Integer.parseInt(line1Parts[0]);
+    int columns = Integer.parseInt(line1Parts[1])-1;
     int startColumn = Integer.parseInt(line2Parts[1]);
     int startRow = Integer.parseInt(line2Parts[0]);
     Color[][] colors = new Color[rows][columns];
@@ -42,6 +42,7 @@ public class Level3 extends Level {
     Level3Input input = (Level3Input) in;
     LevelOutput output = new Level3Output();
 
+    System.out.println(input.toString());
 
     Color[][] map = null;
 
